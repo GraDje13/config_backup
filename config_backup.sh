@@ -1,6 +1,6 @@
 #!/bin/bash
 
-configs=(~/.config/nvim/init.vim ~/.xmonad/xmonad.hs ~/.xmobarrc ~/.bashrc ~/.xinitc ~/.doom.d/config.el ~/.doom.d/init.el ~/.doom.d/packages.el ~/.alacritty.yml ~/.scripts/config_backup.sh)
+configs=(~/.config/nvim/init.vim ~/.xmonad/xmonad.hs ~/.xmobarrc ~/.bashrc ~/.xinitc ~/.doom.d/config.el ~/.doom.d/init.el ~/.doom.d/packages.el ~/.alacritty.yml ~/.scripts/config_backup.sh /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf)
 
 backup_location=~/github/config_backup/ 
 
