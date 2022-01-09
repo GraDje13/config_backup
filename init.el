@@ -188,4 +188,7 @@
 
        :config
        ;;literate
-       (default +bindings +smartparens))
+       (default +bindings +smartparens)
+
+       (projectile-add-known-project"~/Documents/projects/termchatty")
+)
