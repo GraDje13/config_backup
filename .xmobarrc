@@ -23,6 +23,6 @@ Config { overrideRedirect = False
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = " }{  %cpu% | %memory% * %swap% | %date% "
+       , template = " }{ %alsa% | %cpu% | %memory% * %swap% | %date% "
        }
 

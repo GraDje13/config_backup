@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Georg Prokert"
+      user-mail-address "georg@prokert.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -26,6 +26,8 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
+
+(setq doom-font (font-spec :family "Fira Code" :size 16))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -52,3 +54,17 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; my own settings:
+
+;; set default viewer to internal one
+(setq +latex-viewers '(pdf-tools))
+
+;; use fish in terminal emulator
+(setq vterm-shell "fish")
+
+(use-package! lsp-ui
+  :config
+  ;;enables inline docs when hovering with cursor
+  (setq lsp-ui-doc-enable t)
+  (setq lsp-ui-doc-show-with-cursor t))

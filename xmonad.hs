@@ -13,23 +13,25 @@ import System.Exit
 import XMonad.Hooks.DynamicLog
 import XMonad.Layout.Gaps
 import XMonad.Layout.Spacing
+import XMonad.Hooks.EwmhDesktops
+
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "alacritty"
+myTerminal      = "alacritty -e fish"
 
 --The preferred web browser
 myBrowser = "librewolf"
 
 --gap size
 
-gapLeft = 20
-gapRight = 20
-gapUpper = 20
-gapLower = 20
+gapLeft = 5
+gapRight = 5
+gapUpper = 5
+gapLower = 5
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -64,7 +66,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#37311B"
+myFocusedBorderColor = "#FF7700"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -190,19 +192,14 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 ------------------------------------------------------------------------
 -- Layouts:
-
--- You can specify and transform your layouts by modifying these values.
--- If you change layout bindings be sure to use 'mod-shift-space' after
--- restarting (with 'mod-q') to reset your layout state to the new
--- defaults, as xmonad preserves your old layout settings by default.
---
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
---
-myLayout = tiled ||| (smartSpacing 10 $ Full)
+-- mod-shift-space restarts the layout settings
+
+myLayout = gaps [(U,gapUpper),(D,gapLower),(R,gapRight),(L,gapLeft)] $ tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = smartSpacing 10 $ Tall nmaster delta ratio
+     tiled   = smartSpacing 5 $ Tall nmaster delta ratio
 
      -- The default number of windows in the master pane
      nmaster = 1 
@@ -242,8 +239,8 @@ myManageHook = composeAll
 -- Defines a custom handler function for X Events. The function should
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
---
-myEventHook = mempty
+-- Necessay to run EU4:
+myEventHook = handleEventHook def <+> fullscreenEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -276,7 +273,7 @@ main = xmonad =<< xmobar defaults
 --
 -- No need to modify this.
 --
-defaults = def {
+defaults = ewmh def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
