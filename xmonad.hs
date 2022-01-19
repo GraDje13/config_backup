@@ -32,6 +32,7 @@ gapLeft = 5
 gapRight = 5
 gapUpper = 5
 gapLower = 5
+smartGap = 5
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -66,7 +67,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#FF7700"
+myFocusedBorderColor = "#9B11CD"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -199,7 +200,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout = gaps [(U,gapUpper),(D,gapLower),(R,gapRight),(L,gapLeft)] $ tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = smartSpacing 5 $ Tall nmaster delta ratio
+     tiled   = smartSpacing smartGap $ Tall nmaster delta ratio
 
      -- The default number of windows in the master pane
      nmaster = 1 

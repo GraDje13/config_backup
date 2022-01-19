@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+ (setq doom-theme 'doom-challenger-deep)
 
 (setq doom-font (font-spec :family "Fira Code" :size 16))
 
@@ -59,7 +59,6 @@
 
 ;; set default viewer to internal one
 (setq +latex-viewers '(pdf-tools))
-
 ;; use fish in terminal emulator
 (setq vterm-shell "fish")
 
