@@ -11,7 +11,8 @@ configs=(~/.config/nvim/init.vim
 	 ~/.alacritty.yml 
 	 ~/.scripts/config_backup.sh 
 	 /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
- 	 ~/Docs/agenda.org)
+ 	 ~/Docs/agenda.org
+     ~/.config/fish/config.fish)
 
 backup_location=~/github/config_backup/ 
 

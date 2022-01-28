@@ -7,6 +7,12 @@
 
 alias ls='ls --color=auto'
 
+#custom functions
+zathura() 
+{
+zathura $1 & disown $$
+}
+
 PS1='[\u@\h \W]\$ '
 . "$HOME/.cargo/env"
 
