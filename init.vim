@@ -40,6 +40,8 @@ Plug 'kdheepak/tabline.nvim'
 " Git
 Plug 'TimUntersberger/neogit'
 
+"Latex
+Plug 'lervag/vimtex'
 call plug#end()
 
 " Theme
@@ -101,6 +103,9 @@ set signcolumn=yes
 " Line numbering
 set number relativenumber
 
+" fix tabs
+set tabstop=4
+
 " Set completeopt to have a better completion experience
 " :help completeopt
 " menuone: popup even when there's only one match
@@ -115,17 +120,39 @@ set shortmess+=c
 autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 500)
 
 let s:startify_ascii_header = [
- \ '                                        ▟▙            ',
- \ '                                        ▝▘            ',
- \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
- \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
- \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
- \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
- \ '▀▀    ▀▀   ▝▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '                                                                           -`',
+ \ '                                                                          .o+`',
+ \ '                                                                         `ooo/',
+ \ '                                                                        `+oooo:',
+ \ '                                                                       `+oooooo:',
+ \ '                                                                       -+oooooo+:',
+ \ '                                        ▟▙                           `/:-:++oooo+:',
+ \ '                                        ▝▘                          `/++++/+++++++:',
+ \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖             `/++++++++++++++:',
+ \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██            `/+++ooooooooooooo/`',
+ \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██           ./ooosssso++osssssso+`',
+ \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██          .oossssso-````/ossssss+`',
+ \ '▀▀    ▀▀   ▝▀▀▀▀      ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀         -osssssso.      :ssssssso.',
+ \ '                                                              :osssssss/        osssso+++.',
+ \ '                                                             /ossssssss/        +ssssooo/-',
+ \ '                                                           `/ossssso+/:-        -:/+osssso+-',
+ \ '                                                          `+sso+:-`                 `.-/+oso:',
+ \ '                                                         `++:.                           `-/+/',
+ \ '                                                         .`                                 `/',
  \ '',
  \]
+
+let g:startify_custom_header_quotes = [
+			\ ['Open heart, open mind, open source'],
+			\ ['Physics is law, everything else is a recommendation'],
+			\ ['I use arch btw'],
+			\ ['Philosophy is written in this grand book — I mean the universe — which stands continually open to our', 'gaze, but it cannot be understood unless one first learns to comprehend the language in which it is', 'written. It is written in the language of mathematics...', ' ', 'G. Galilei, Il Saggiatore, 1623']
+			\ ]
+
 let g:startify_custom_header = map(s:startify_ascii_header +
         \ startify#fortune#quote(), '"   ".v:val')
+
+let g:vimtex_view_general_viewer = 'zathura'
 
 " Lua setup
 lua<<EOF

@@ -27,12 +27,12 @@ myTerminal      = "alacritty -e fish"
 myBrowser = "librewolf"
 
 --gap size
-
-gapLeft = 5
-gapRight = 5
-gapUpper = 5
-gapLower = 5
-smartGap = 5
+gaming = 1
+gapLeft = 5 * gaming
+gapRight = 5 * gaming
+gapUpper = 5 * gaming
+gapLower = 5 * gaming 
+smartGap = 5 * gaming
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
