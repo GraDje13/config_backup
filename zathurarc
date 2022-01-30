@@ -1,5 +1,3 @@
 set recolor true
 map <C-j> zoom out
 map <C-k> zoom in
-map <A-j> 10 full-down
-map <A-k> 10 full-up
