@@ -1,6 +1,6 @@
 Config { overrideRedirect = False
        , font     = "xft:Fira Code Nerd Font:size=13"
-       , bgColor  = "#333333"
+       , bgColor  = "#666666"
        , fgColor  = "#f8f8f2"
        , position = Top L 100
        , commands = [ Run Cpu
@@ -15,9 +15,10 @@ Config { overrideRedirect = False
                     , Run XMonadLog
 					, Run Com "free_disk.sh" [""] "" 100
 					, Run Com "uname" ["-r"] "" 36000 
+					, Run Com "xmonad" ["--version"] "" 36000
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "   %uname%  }{   %cpu%    %memory%    Free: %free_disk.sh%     %date% "
+       , template = "     %uname%    %xmonad% }{   %cpu%    %memory%    Free: %free_disk.sh%     %date% "
        }
 

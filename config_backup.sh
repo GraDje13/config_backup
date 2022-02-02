@@ -13,6 +13,7 @@ configs=(~/.config/nvim/init.vim
 	 /etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
  	 ~/Docs/agenda.org
      ~/.config/fish/config.fish
+	 ~/.config/picom.conf
      ~/.config/zathura/zathurarc)
 
 backup_location=~/github/config_backup/ 

@@ -28,11 +28,11 @@ myBrowser = "librewolf"
 
 --gap size
 gaming = 1
-gapLeft = 5 * gaming
-gapRight = 5 * gaming
-gapUpper = 5 * gaming
-gapLower = 5 * gaming 
-smartGap = 5 * gaming
+gapLeft = 9 * gaming
+gapRight = 9 * gaming
+gapUpper = 9 * gaming
+gapLower = 9 * gaming 
+smartGap = 9 * gaming
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -67,7 +67,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#9B11CD"
+myFocusedBorderColor = "#DDDDDD"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -259,7 +259,7 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = spawn "picom"
+myStartupHook = spawn "picom --experimental-backends"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
