@@ -47,6 +47,9 @@ Plug 'lervag/vimtex'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-orgmode/orgmode'
 
+"haskell
+Plug 'https://github.com/neovimhaskell/haskell-vim'
+
 call plug#end()
 
 " Theme
@@ -109,8 +112,8 @@ set signcolumn=yes
 set number relativenumber
 
 " fix tabs
-set tabstop=4
-
+set tabstop=2
+set shiftwidth=2
 " Set completeopt to have a better completion experience
 " :help completeopt
 " menuone: popup even when there's only one match
@@ -161,6 +164,11 @@ let g:startify_custom_header = map(s:startify_ascii_header +
         \ startify#fortune#quote(), '"   ".v:val')
 
 let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_indent_enabled = 1 
+
+"Macros
+let @e = "i\\begin{equation}oo\\end{equation}o%2k"
+let @a = "i\\begin{align}oo\\end{align}o%2k"
 
 " Lua setup
 lua<<EOF
