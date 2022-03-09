@@ -164,11 +164,14 @@ let g:startify_custom_header = map(s:startify_ascii_header +
         \ startify#fortune#quote(), '"   ".v:val')
 
 let g:vimtex_view_general_viewer = 'zathura'
-let g:vimtex_indent_enabled = 1 
+let g:vimtex_indent_enabled = 0 
 
 "Macros
 let @e = "i\\begin{equation}oo\\end{equation}o%2k"
 let @a = "i\\begin{align}oo\\end{align}o%2k"
+let @f = "i\\begin{frame}oo\\end{frame}1k"
+let @i = "i\\begin{itemize}oo\\end{itemize}1k"
+
 
 " Lua setup
 lua<<EOF
